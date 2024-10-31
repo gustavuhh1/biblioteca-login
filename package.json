@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/gustavuhh1/biblioteca-login#readme",
   "dependencies": {
-    "express": "^4.21.1"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "parse": "^5.3.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
