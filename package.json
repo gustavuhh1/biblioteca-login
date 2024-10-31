@@ -1,0 +1,26 @@
+{
+  "name": "biblioteca-login",
+  "version": "1.0.0",
+  "description": "site trablho do joão",
+  "main": "app.js",
+  "scripts": {
+    "test": "run app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavuhh1/biblioteca-login.git"
+  },
+  "author": "Gustavo/Elisson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavuhh1/biblioteca-login/issues"
+  },
+  "homepage": "https://github.com/gustavuhh1/biblioteca-login#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
