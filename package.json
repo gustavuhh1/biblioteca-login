@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "site trablho do joão",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "run app.js",
-    "dev": "nodemon app.js"
+    "run": "nodemon app.js"
   },
   "repository": {
     "type": "git",
