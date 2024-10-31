@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "run app.js",
-    "run": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
