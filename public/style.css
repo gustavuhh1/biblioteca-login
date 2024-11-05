@@ -71,9 +71,7 @@ form{
         &:hover{
             background-color: var(--terciaria);
             transition: 0.3s ease-in-out;
-        }
-
-        
+        }      
     }
     & a{
         color: var(--quartenaria);
@@ -113,5 +111,29 @@ label{
 
     & p{
         color: white;
+    }
+}
+
+.register{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    & button{
+        width: 30%;
+        border: none;
+        background-color: var(--secundaria);
+        padding: 0.5rem;
+        transition: 0.3s;
+        border-radius: 5px;
+
+        &:hover{
+            background-color: var(--terciaria);
+            transition: 0.3s ease-in-out;
+        } 
     }
 }
