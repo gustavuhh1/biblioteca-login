@@ -1,6 +1,7 @@
 const btnEntrar = document.querySelector('#enter');
 const form = document.querySelector('form');
 
+
 btnEntrar.addEventListener('click', e => {
     e.preventDefault();
     const inputLogin = document.querySelector('#loginEntrada');
