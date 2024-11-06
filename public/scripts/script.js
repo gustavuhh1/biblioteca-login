@@ -1,5 +1,5 @@
-import registerHUD from "./registerHUD.js";
-import registerBtn from "./genMain.js";
+import "./registerHUD.js";
+import "./genMain.js";
 import './loginUser.js';
 
 
