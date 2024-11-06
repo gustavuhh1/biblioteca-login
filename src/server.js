@@ -15,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-app.addHook("preHandler", async (request, reply) => {
+app.addHook("preHandler", async (request) => {
     console.log(`[${request.method} ${request.url}]`);
 });
 app.register(userRoutes, {
