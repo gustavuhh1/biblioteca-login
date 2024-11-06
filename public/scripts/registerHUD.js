@@ -48,7 +48,7 @@ function registerHUD() {
           "token_digit": "1234"
         }
 
-        fetch('http://localhost:3000/register', {
+        fetch(`${window.location.origin}/register`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json', // Informando que o conteúdo é JSON
@@ -90,7 +90,7 @@ function registerHUD() {
         "token_digit": "1234"
       }
 
-      fetch('http://localhost:3000/register', {
+      fetch(`${window.location.origin}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Informando que o conteúdo é JSON

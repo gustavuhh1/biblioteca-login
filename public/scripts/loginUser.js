@@ -12,7 +12,7 @@ btnEntrar.addEventListener('click', e => {
         "password": passwordEntrada.value.trim(),
     };
 
-    fetch('http://localhost:3000/login', {
+    fetch(`${window.location.origin}/login`, {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},  // Informando que o conteúdo é JSON
         body: JSON.stringify(usuario) // Convertendo o objeto para string
@@ -40,7 +40,7 @@ form.addEventListener('submit', e => {
         "password": passwordEntrada.value.trim(),
     };
 
-    fetch('http://localhost:3000/login', {
+    fetch(`${window.location.origin}/login`, {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},  // Informando que o conteúdo é JSON
         body: JSON.stringify(usuario) // Convertendo o objeto para string
