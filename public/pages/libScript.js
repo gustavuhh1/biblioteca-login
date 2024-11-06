@@ -1,5 +1,6 @@
 const bookList = document.querySelector('.books')
 
+// eslint-disable-next-line no-unused-vars
 const books = fetch('./books.json').then(async response => response.json()).then(livros=> livros.forEach(livro => {
     const li = document.createElement('li');
     li.className = 'book';
@@ -25,3 +26,6 @@ const books = fetch('./books.json').then(async response => response.json()).then
     li.append(img, titulo, autor, ano)
     bookList.appendChild(li)
 }))
+
+const title = document.querySelector('#title')
+title.addEventListener('click', e => window.location.href = '../index.html')

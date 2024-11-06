@@ -51,6 +51,18 @@ body{
         text-align: center;
         gap: 0.8rem;
         border-radius: 5px;
+
+        & h1{
+            color: var(--quartenaria);
+            transition: 0.3s;
+        }
+
+        &  #title:hover{
+            cursor: pointer;
+            scale: 1.03;
+            transition: 0.3s ease-in-out;
+            color: var(--quinta);
+        }
     }
 
 

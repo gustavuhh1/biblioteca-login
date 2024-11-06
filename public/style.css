@@ -67,8 +67,9 @@ form{
         padding: 0.5rem;
         transition: 0.3s;
         border-radius: 5px;
-
+        
         &:hover{
+            cursor: pointer;
             background-color: var(--terciaria);
             transition: 0.3s ease-in-out;
         }      
@@ -86,7 +87,7 @@ label{
     gap: 0.5rem;
      & input {
         height: 1.5rem;
-        width: 70%;
+        width: 55%;
         text-align: center;
         border:none;
         background-color:azure;
@@ -130,11 +131,12 @@ label{
         padding: 0.5rem;
         transition: 0.3s;
         border-radius: 5px;
+        cursor: pointer;
 
         &:hover{
             background-color: var(--terciaria);
             transition: 0.3s ease-in-out;
-        } 
+        }
     }
 }
 
