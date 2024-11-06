@@ -30,10 +30,11 @@ export async function userRoutes() {
 
         const createNewUser = z.object({
             username: z.string(),
-            password: z.string()
+            password: z.string(),
+            token_digit: z.string()
         })
 
-        const { username, password } = createNewUser.parse(
+        const { username, password, token_digit } = createNewUser.parse(
             request.body,
         );
 
@@ -47,11 +48,12 @@ export async function userRoutes() {
                     const user = new Parse.Object('Usuarios')
                     user.set('username', username)
                     user.set('password', password)
+                    user.set('token_digit', token_digit)
                     const created = await user.save()
-                        return reply.status(201).send({
-                            created,
-                            "msg": `Usuário: ${username} criado com sucesso`
-                        })
+                    return reply.status(201).send({
+                        created,
+                        "msg": `Usuário: ${username} criado com sucesso`
+                    })
                 }else{
                     throw Error('Usuário existente')
                 }
@@ -95,5 +97,45 @@ export async function userRoutes() {
         }
     })
 
+    app.put('/resetPassword', async (request, reply) => {
+
+
+        const getUserInfos = z.object({
+            username: z.string(),
+            password: z.string(),
+            token_digit: z.string(),
+            new_password: z.string()
+        })
+
+        const { username, password, token_digit, new_password} = getUserInfos.parse(request.body)
+
+        const query = new Parse.Query('Usuarios')
+        query.equalTo('username', username)
+
+
+        try{
+            let user = await query.first()
+            const getUser = {
+                "createdAt": await user.get('createdAt'),
+                "username": await user.get('username'),
+                "password": await user.get('password'),
+                "token_digit": await user.get('token_digit'),
+                "new_password": new_password,
+            }
+
+            if(token_digit !== getUser.token_digit || password !== getUser.password){
+                throw new Error("Token de 4 digitos incorreto.");
+            }else{
+                user.set('password', new_password)
+                const response = await user.save()
+                reply.send(response)
+            }
+
+
+
+        }catch(e){
+            reply.status(401).send("Não autorizado." + e)
+        }
+    })
 
 }
