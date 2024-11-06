@@ -8,30 +8,31 @@ function registerHUD() {
 
     const labelUser = document.createElement('label'); // Cria a label do usuário
     labelUser.className = 'koh-santepheap-light';
-    labelUser.textContent = "Crie seu login:"
+    labelUser.textContent = "Crie seu login:";
 
     const userInput = document.createElement('input'); // Input para criar usuário
     userInput.className = 'koh-santepheap-light';
-    userInput.id = 'registerConfirm'
+    userInput.id = 'registerConfirm';
 
 
     const labelPassword = document.createElement('label'); // Cria a label da senha
     labelPassword.className = 'koh-santepheap-light';
-    labelPassword.textContent = "Crie sua senha:"
+    labelPassword.textContent = "Crie sua senha:";
 
-    const passwordInput = document.createElement('input'); //Input para criar senha
+    const passwordInput = document.createElement('input'); // Input para criar senha
     passwordInput.className = 'koh-santepheap-light';
     passwordInput.id = 'password';
-    passwordInput.type = 'password'
+    passwordInput.type = 'password';
 
     const labelConfirmPassword = document.createElement('label'); // Cria a label da confirmação de senha
     labelConfirmPassword.className = 'koh-santepheap-light';
-    labelConfirmPassword.textContent = "Confirme sua senha:"
+    labelConfirmPassword.textContent = "Confirme sua senha:";
 
     const confirmPasswordInput = document.createElement('input'); //Input para criar confirmação de senha
     confirmPasswordInput.className = 'koh-santepheap-light';
     confirmPasswordInput.id = 'passwordConfirm';
-    confirmPasswordInput.type = 'password'
+    confirmPasswordInput.type = 'password';
+
     confirmPasswordInput.addEventListener('keydown', e => {
         if (e.key == "Enter") { // Evento para enviar registro - btn !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             const username = userInput.value;
@@ -39,33 +40,33 @@ function registerHUD() {
             const confirmPasswordInputValue = confirmPasswordInput.value;
     
             if ((username.length >= 3) && (((password.length >= 1) == (confirmPasswordInputValue.length >= 1) && (password == confirmPasswordInputValue)))) { // Se tiver tudo nos conformes, podemos iniciar o registro
-                const usuario = {
-                    "username": username,
-                    "password": password
+              
+              const usuario = {
+                "username": username,
+                "password": password,
+                "token_digit": "1234"
+            }
+            
+            fetch('http://localhost:3000/register', {
+              method: 'POST', 
+              headers: {
+                'Content-Type': 'application/json', // Informando que o conteúdo é JSON
+              },
+              body: JSON.stringify(usuario) // Convertendo o objeto para string JSON
+            })
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Falha na requisição: ' + response.statusText);
                 }
-
-                fetch('http://localhost:3000/register', {
-                  method: 'POST', 
-                  headers: {
-                    'Content-Type': 'application/json', // Informando que o conteúdo é JSON
-                  },
-                  body: JSON.stringify(usuario) // Convertendo o objeto para string JSON
-                })
-                  .then(response => {
-                    if (!response.ok) {
-                      throw new Error('Falha na requisição: ' + response.statusText);
-                    }
-                    return response.json(); // Caso a resposta seja bem-sucedida, converte para JSON
-                  })
-                  .then(data => {
-                    console.log('Resposta do servidor:', data); // Manipula os dados recebidos
-                  })
-                  .catch(error => {
-                    console.error('Erro na requisição:', error); // Lida com o erro, se houver
-                  });
-                alert(usuario)
+                return response.json(); // Caso a resposta seja bem-sucedida, converte para JSON
+              })
+              .then(data => {
+                console.log('Resposta do servidor:', data); // Manipula os dados recebidos
+              })
+              
     
             } else{ // Caso não dê certo, guia o usuário para registrar-se com sucesso
+              
                 const p = document.createElement('p')
                 p.textContent = `Tente novamente!
                 O usuário precisa ter ao menos 3 caracteres.
@@ -90,16 +91,16 @@ function registerHUD() {
     createBtn.className = "koh-santepheap-regular";
     createBtn.textContent = "Registrar-me"
     createBtn.addEventListener('click', () => { // Evento para enviar registro - btn !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        const username = userInput.value;
-        const password = passwordInput.value;
-        const confirmPasswordInputValue = confirmPasswordInput.value;
+        const username = userInput.value.trim();
+        const password = passwordInput.value.trim();
+        const confirmPasswordInputValue = confirmPasswordInput.value.trim();
 
         if ((username.length >= 3) && (((password.length >= 1) == (confirmPasswordInputValue.length >= 1) && (password == confirmPasswordInputValue)))) { // Se tiver tudo nos conformes, podemos iniciar o registro
           const usuario = {
             "username": username,
-            "password": password
+            "password": password,
+            "token_digit": "1234"
         }
-
         fetch('http://localhost:3000/register', {
           method: 'POST', 
           headers: {

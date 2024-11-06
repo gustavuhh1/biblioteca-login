@@ -79,7 +79,6 @@ export async function userRoutes() {
     
         
         try {
-            
             let user = await query.first()
             const getUser = {
                 "username": await user.get('username'),
@@ -99,7 +98,6 @@ export async function userRoutes() {
 
     app.put('/resetPassword', async (request, reply) => {
 
-
         const getUserInfos = z.object({
             username: z.string(),
             password: z.string(),
@@ -111,7 +109,6 @@ export async function userRoutes() {
 
         const query = new Parse.Query('Usuarios')
         query.equalTo('username', username)
-
 
         try{
             let user = await query.first()
@@ -130,8 +127,6 @@ export async function userRoutes() {
                 const response = await user.save()
                 reply.send(response)
             }
-
-
 
         }catch(e){
             reply.status(401).send("Não autorizado." + e)
