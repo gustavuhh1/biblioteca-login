@@ -3,7 +3,7 @@ import { env } from "../env.js";
 import { z } from 'zod'
 import Parse from 'parse/node.js'
 
-Parse.initialize(env.APP_ID, env.JS_KEY); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+Parse.initialize(env.APP_ID, env.JS_KEY);
 Parse.serverURL = 'https://parseapi.back4app.com/'
 
 export async function userRoutes() {
@@ -44,7 +44,6 @@ export async function userRoutes() {
         try{
             await query.first().then((async exist =>{
                 if(!exist){
-
                     const user = new Parse.Object('Usuarios')
                     user.set('username', username)
                     user.set('password', password)
@@ -53,7 +52,6 @@ export async function userRoutes() {
                             created,
                             "msg": `Usuário: ${username} criado com sucesso`
                         })
-                    
                 }else{
                     throw Error('Usuário existente')
                 }
@@ -63,8 +61,6 @@ export async function userRoutes() {
             console.log(error)
             reply.status(409).send(error)            
         }
-        
-
     })
 
     app.post('/login', async (request, reply) => {

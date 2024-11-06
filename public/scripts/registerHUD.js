@@ -39,11 +39,31 @@ function registerHUD() {
             const confirmPasswordInputValue = confirmPasswordInput.value;
     
             if ((username.length >= 3) && (((password.length >= 1) == (confirmPasswordInputValue.length >= 1) && (password == confirmPasswordInputValue)))) { // Se tiver tudo nos conformes, podemos iniciar o registro
-                const padrao = {
+                const usuario = {
                     "username": username,
                     "password": password
                 }
-                alert(JSON.stringify(padrao))
+
+                fetch('http://localhost:3000/register', {
+                  method: 'POST', 
+                  headers: {
+                    'Content-Type': 'application/json', // Informando que o conteúdo é JSON
+                  },
+                  body: JSON.stringify(usuario) // Convertendo o objeto para string JSON
+                })
+                  .then(response => {
+                    if (!response.ok) {
+                      throw new Error('Falha na requisição: ' + response.statusText);
+                    }
+                    return response.json(); // Caso a resposta seja bem-sucedida, converte para JSON
+                  })
+                  .then(data => {
+                    console.log('Resposta do servidor:', data); // Manipula os dados recebidos
+                  })
+                  .catch(error => {
+                    console.error('Erro na requisição:', error); // Lida com o erro, se houver
+                  });
+                alert(usuario)
     
             } else{ // Caso não dê certo, guia o usuário para registrar-se com sucesso
                 const p = document.createElement('p')
@@ -75,11 +95,30 @@ function registerHUD() {
         const confirmPasswordInputValue = confirmPasswordInput.value;
 
         if ((username.length >= 3) && (((password.length >= 1) == (confirmPasswordInputValue.length >= 1) && (password == confirmPasswordInputValue)))) { // Se tiver tudo nos conformes, podemos iniciar o registro
-            const padrao = {
-                "username": username,
-                "password": password
+          const usuario = {
+            "username": username,
+            "password": password
+        }
+
+        fetch('http://localhost:3000/register', {
+          method: 'POST', 
+          headers: {
+            'Content-Type': 'application/json', // Informando que o conteúdo é JSON
+          },
+          body: JSON.stringify(usuario) // Convertendo o objeto para string JSON
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Falha na requisição: ' + response.statusText);
             }
-            alert(JSON.stringify(padrao))
+            return response.json(); // Caso a resposta seja bem-sucedida, converte para JSON
+          })
+          .then(data => {
+            console.log('Resposta do servidor:', data); // Manipula os dados recebidos
+          })
+          .catch(error => {
+            console.error('Erro na requisição:', error); // Lida com o erro, se houver
+          });
 
         } else{ // Caso não dê certo, guia o usuário para registrar-se com sucesso
             const p = document.createElement('p')
