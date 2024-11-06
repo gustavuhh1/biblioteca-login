@@ -4,7 +4,7 @@ import { config } from 'dotenv'
 config()
 
 const envSchema = z.object({
-    PORT: z.string(),
+    PORT: z.any(),
     APP_ID: z.string(),
     JS_KEY: z.string()
 })
