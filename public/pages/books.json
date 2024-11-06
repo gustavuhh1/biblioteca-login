@@ -1,0 +1,103 @@
+[
+    {
+        "titulo": "Duna",
+        "autor": "Frank Herbert",
+        "ano_publicacao": 1965,
+        "genero": "Ficção Científica",
+        "editora": "Chilton Books",
+        "idioma": "Português",
+        "paginas": 688,
+        "disponibilidade": {
+            "estoque": 12,
+            "preco": 45.90,
+            "formato": [
+                "Capa dura",
+                "E-book"
+            ]
+        }
+    },
+    {
+        "titulo": "Duna",
+        "autor": "Frank Herbert",
+        "ano_publicacao": 1965,
+        "genero": "Ficção Científica",
+        "editora": "Chilton Books",
+        "idioma": "Português",
+        "paginas": 688,
+        "disponibilidade": {
+            "estoque": 12,
+            "preco": 45.90,
+            "formato": [
+                "Capa dura",
+                "E-book"
+            ]
+        }
+    },
+    {
+        "titulo": "Clean Code",
+        "autor": "Robert C. Martin",
+        "ano_publicacao": 2008,
+        "genero": "Programação",
+        "editora": "Prentice Hall",
+        "idioma": "Inglês",
+        "paginas": 464,
+        "disponibilidade": {
+            "estoque": 5,
+            "preco": 55.00,
+            "formato": [
+                "Capa mole",
+                "E-book"
+            ]
+        },
+        "topicos": [
+            "Boas práticas de codificação",
+            "Refatoração",
+            "Testes de unidade",
+            "Código limpo"
+        ]
+    },
+    {
+        "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+        "autor": "J.R.R. Tolkien",
+        "ano_publicacao": 1954,
+        "genero": "Fantasia",
+        "editora": "HarperCollins",
+        "isbn": "978-0007522903",
+        "idioma": "Português",
+        "paginas": 576,
+        "disponibilidade": {
+            "estoque": 20,
+            "preco": 60.00,
+            "formato": [
+                "Capa dura",
+                "Brochura",
+                "E-book"
+            ]
+        },
+        "adaptacao": {
+            "filme": true,
+            "diretor": "Peter Jackson",
+            "ano_lancamento": 2001
+        }
+    },
+    {
+        "titulo": "O Pequeno Príncipe",
+        "autor": "Antoine de Saint-Exupéry",
+        "ano_publicacao": 1943,
+        "genero": "Infantil",
+        "editora": "HarperCollins",
+        "isbn": "978-8522031445",
+        "idioma": "Português",
+        "paginas": 96,
+        "disponibilidade": {
+            "estoque": 100,
+            "preco": 20.00,
+            "formato": [
+                "Brochura",
+                "E-book",
+                "Audiobook"
+            ]
+        },
+        "ilustracoes": true
+    }
+]
