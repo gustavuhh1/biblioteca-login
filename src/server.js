@@ -23,7 +23,7 @@ app.register(userRoutes, {
 })
 
 app.register(fastifyStatic, {
-    root: path.join(__dirname, '../public/'), // Define a pasta 'public' como a raiz para arquivos estáticos
+    root: path.join(__dirname, './public'), // Define a pasta 'public' como a raiz para arquivos estáticos
     prefix: '/', // Define o prefixo da URL para acessar arquivos (use '/' para a raiz)
 });
 
