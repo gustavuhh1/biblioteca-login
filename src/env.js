@@ -1,10 +1,10 @@
-import { z } from 'zod'
+import { any, z } from 'zod'
 import { config } from 'dotenv'
 
 config()
 
 const envSchema = z.object({
-    PORT: z.coerce.number().default(3000),
+    PORT: any,
     APP_ID: z.string(),
     JS_KEY: z.string()
 })
