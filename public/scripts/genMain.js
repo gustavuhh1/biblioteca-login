@@ -1,13 +1,12 @@
 import registerHUD from "./registerHUD.js";
-import {btnEntrar, form} from "./loginUser.js";
+import form from "./loginUser.js";
 
 const registerBtn = document.querySelector('#register');
-const slogan = document.querySelector('p');
-console.log(form);
 
 
 registerBtn.addEventListener('click', e => {
     e.preventDefault();
+    const slogan = document.querySelector('p');
     form.style.display = 'none';
     slogan.style.display = 'none';
     registerHUD(); 

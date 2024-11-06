@@ -58,4 +58,4 @@ form.addEventListener('submit', e => {
 });
 
 
-export default {btnEntrar, form}
+export default (btnEntrar, form)
