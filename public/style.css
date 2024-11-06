@@ -115,7 +115,7 @@ label{
 }
 
 .register{
-    height: 50%;
+    height: 65%;
     width: 100%;
     display: flex;
     flex-flow: column;
